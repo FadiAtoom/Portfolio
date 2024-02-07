@@ -43,17 +43,13 @@ function displayImage(index) {
 
 function showNextImage() {
     currentImageIndex++;
-    if (currentImageIndex >= 5) {
-        currentImageIndex = 0;
-    }
+    
     displayImage(currentImageIndex);
 }
 
 function showPreviousImage() {
     currentImageIndex--;
-    if (currentImageIndex < 0) {
-        currentImageIndex = 4;
-    }
+    
     displayImage(currentImageIndex);
 }
 
