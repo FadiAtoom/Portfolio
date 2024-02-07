@@ -1,25 +1,4 @@
-/**
- * =================================================================== 
- *
- *  Kards v1.0 Base Stylesheet
- *  url: styleshout.com
- *  03-01-2016
- *  ------------------------------------------------------------------
- *  TOC:
- *  01. reset
- *  02. basic/base setup styles
- *  03. grid
- *  04. MISC
- *
- * =================================================================== 
- */
 
-/** 
- * ===================================================================
- * 01. reset - normalize.css v3.0.2 | MIT License | git.io/normalize
- *
- * ------------------------------------------------------------------- 
- */
 html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
@@ -868,4 +847,143 @@ textarea {
 	text-align: center;
 }
 
-/*# sourceMappingURL=base.css.map */
+/*/////////////////////////////////////////////*/
+.grid-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 90%;
+	margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grid-item {
+	width: calc(33.33% - 16px); /* Three items in a row, with 16px gutter */
+	margin: 8px;
+	box-sizing: border-box;
+	background-color: #ebebeb;
+	padding: 20px;
+	text-align: center;
+	color:#313131;
+	font-size: 1.8rem;
+    line-height: 1.5;
+  }
+
+  .grid-item:hover{
+	background-color: #6976b7;
+	color:#ebebeb;
+	cursor: pointer;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+	z-index: 9999;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+.images-box {
+    height: 100%; /* ارتفاع ثابت للصور */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images-box img {
+     /* املأ ارتفاع الصورة بالكامل داخل المربع */
+    width: auto;
+    display: block;
+    margin: 0 auto; /* لوضع الصورة في منتصف الصفحة */
+}
+.link-box {
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    display: flex;
+	top: 45%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+	font-size: 1.5rem;
+}
+
+.Prev {
+    cursor: pointer;
+    color: #f1f1f1;
+    font-weight: 500;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+	text-align: left;
+}
+.Next {
+    cursor: pointer;
+    color: #f1f1f1;
+    font-weight: 500;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+	text-align: right;
+}
+.go-back {
+	position: fixed;
+	top:  10px;
+	left: 10px;
+	z-index: 900;
+	cursor: pointer;
+	background-color: #6976b7;
+	color: #f1f1f1;
+	border-radius: 15px;
+    padding: 5px 10px;
+	
+}
+
+.go-back:hover{
+	background-color: #f1f1f1;
+	color: #1f1f1f;
+}
+@media screen and (max-width: 850px) {
+	.images-box{
+		max-height: 550px;
+	}
+	.modal-content{
+		width: 85%;
+	}
+}
+  @media screen and (max-width: 768px) {
+	.grid-item {
+	  width: calc(50% - 16px); /* Two items in a row on smaller screens */
+	}
+	.images-box{
+		max-height: 600px;
+	}
+	.modal-content{
+		width: 80%;
+	}
+  }
+
+  @media screen and (max-width: 480px) {
+	.grid-item {
+	  width: 100%; /* Single item on even smaller screens */
+	}
+	.images-box{
+		max-height: 300px;
+	}
+	.modal-content{
+		width: 80%;
+	}
+  }
+  
+
