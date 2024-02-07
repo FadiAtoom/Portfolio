@@ -1,17 +1,19 @@
 var currentImageIndex = 0;
-
-function showMorePhoto(category) {
+var numberImages ;
+function showMorePhoto(category , numberOfimage) {
     currentImageIndex = 0; // Reset the current image index
-    showImage(category);
+    numberImages = numberOfimage;
+    showImage(category , numberOfimage);
+
 }
 
-function showImage(category) {
+function showImage(category , numberOfimage) {
     var imagesBox = document.getElementById("images-box");
     imagesBox.innerHTML = "";
 
     const imagesFolder = "images/" + category;
 
-    for (var i = 1; i <= 100; i++) {
+    for (var i = 1; i <= numberOfimage; i++) {
         imageURL = "images/" + category + "/" + i + '.jpg';
 
         if (imageExists(imageURL)) {
@@ -42,14 +44,19 @@ function displayImage(index) {
 }
 
 function showNextImage() {
+
     currentImageIndex++;
-    
+    if (currentImageIndex >= numberImages) {
+        currentImageIndex = 0;
+    }
     displayImage(currentImageIndex);
 }
 
 function showPreviousImage() {
     currentImageIndex--;
-    
+    if (currentImageIndex < 0) {
+        currentImageIndex = numberImages-1;
+    }
     displayImage(currentImageIndex);
 }
 
