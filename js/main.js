@@ -4,6 +4,25 @@
  *
  * ------------------------------------------------------------------- 
  */ 
+document.getElementById('shareBtn').addEventListener('click', async () => {
+  try {
+    const url = 'https://example.com';
+    const title = 'Example Page Title';
+
+    if (navigator.share) {
+      await navigator.share({
+        title,
+        text: Check out this page: ${url},
+        url
+      });
+      console.log('Shared successfully');
+    } else {
+      console.log('Share not supported');
+    }
+  } catch (err) {
+    console.error('Error sharing:', err);
+  }
+});
 
 (function($) {
 
