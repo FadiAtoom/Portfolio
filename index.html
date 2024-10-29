@@ -177,35 +177,7 @@
 
    	</div>
 
-   	<div class="row button-section">
-   		<div class="col-twelve"> 
-			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a> 
-			<a href="./Fadi Atoom CV 2023.pdf" title="Download CV" class="button button-primary" target="_system" >Download CV</a> </div>
-		<a class="button button-primary" id="shareBtn">Share Link</a>
-   		</div>   		
-   	</div>
-	   <script>
-document.getElementById('shareBtn').addEventListener('click', async () => {
-  try {
-    const url = 'https://example.com';
-    const title = 'Example Page Title';
-
-    if (navigator.share) {
-      await navigator.share({
-        title,
-        text: Check out this page: ${url},
-        url
-      });
-      console.log('Shared successfully');
-    } else {
-      console.log('Share not supported');
-    }
-  } catch (err) {
-    console.error('Error sharing:', err);
-  }
-});
-
-	</script>
+   	<div class="row button-section"> <div class="col-twelve"> <a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a> <a href="./Fadi Atoom CV 2023.pdf" title="Download CV" class="button button-primary" target="_system">Download CV</a> </div> <a class="button button-primary" id="shareBtn">Share Link</a> </div> <script> document.getElementById('shareBtn').addEventListener('click', async () => { try { const url = 'https://example.com'; const title = 'Example Page Title'; const text = `Check out this page: ${url}`; if (navigator.share) { await navigator.share({ title, text, url }); console.log('Shared successfully'); } else { console.log('Share not supported'); } } catch (err) { console.error('Error sharing:', err); }
 
    </section> <!-- /process-->    
 
