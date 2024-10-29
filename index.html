@@ -176,7 +176,12 @@
    		</div>
 
    	</div>
+ <script> 
+		   function ff()=>{
 
+			   console.log("sakjfg;sadfgus;");
+		   }
+	   </script> 
    	<div class="row button-section"> 
 		<div class="col-twelve"> 
 			<a href="#contact" title="Hire Me" class="button stroke smoothscroll">Hire Me</a> 
@@ -184,13 +189,7 @@
 		<button  id="shareBtn" onclick= "ff()" >Share Link</button> </div> 
 	   
 	   
-	   <script> 
-		   function ff()=>{
-
-			   console.log("sakjfg;sadfgus;");
-		   }
-		   document.getElementById('shareBtn').addEventListener('click', async () => { try { const url = 'https://example.com'; const title = 'Example Page Title'; const text = `Check out this page: ${url}`; if (navigator.share) { await navigator.share({ title, text, url }); console.log('Shared successfully'); } else { console.log('Share not supported'); } } catch (err) { console.error('Error sharing:', err); }
-
+	  
    </section> <!-- /process-->    
 
 
